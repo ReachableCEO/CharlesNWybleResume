@@ -19,12 +19,12 @@ export chron_DOC_OUTPUT_FILE="CharlesWyble-December2023-ChronologicalResume.docx
 function prevRunCleanup()
 {
 echo "Cleaning up all in one resume output files..."
-rm $ai1_DOC_OUTPUT_FILE
-rm $ai1_PDF_OUTPUT_FILE
+rm output/$ai1_DOC_OUTPUT_FILE
+rm output/$ai1_PDF_OUTPUT_FILE
 
 echo "Cleaning up chronological resume output files..."
-rm $chron_DOC_OUTPUT_FILE
-rm $chron_PDF_OUTPUT_FILE
+rm output/$chron_DOC_OUTPUT_FILE
+rm output/$chron_PDF_OUTPUT_FILE
 }
 
 function makeOutput()
@@ -33,32 +33,32 @@ function makeOutput()
 echo "Creating all in one PDF..."
 
 pandoc \
-	< $ai1_resume_file \
+	< input/$ai1_resume_file \
     --from=markdown \
-	--output=$ai1_DOC_OUTPUT_FILE
+	--output=output/$ai1_DOC_OUTPUT_FILE
 
 echo "Creating all in one DOC..."
 
 pandoc \
-	< $ai1_resume_file \
+	< input/$ai1_resume_file \
     --from=markdown \
 	-V geometry:margin=0.0in \
-	--output=$ai1_PDF_OUTPUT_FILE
+	--output=output/$ai1_PDF_OUTPUT_FILE
 
 echo "Creating chronological DOC..."
 
 pandoc \
-	< $chron_resume_file \
+	< input/$chron_resume_file \
     --from=markdown \
-	--output=$chron_DOC_OUTPUT_FILE
+	--output=output/$chron_DOC_OUTPUT_FILE
 
 echo "Creating chronological PDF..."
 
 pandoc \
-	< $ai1_resume_file \
+	< input/$ai1_resume_file \
     --from=markdown \
 	-V geometry:margin=0.0in \
-	--output=$chron_PDF_OUTPUT_FILE
+	--output=output/$chron_PDF_OUTPUT_FILE
 
 }
 
