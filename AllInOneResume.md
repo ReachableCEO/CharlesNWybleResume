@@ -271,3 +271,7 @@ satisfaction.
 • Network Infrastructure Upgrade. Upgraded the network from hubs to Linksys managed switches to increase 
 network performance and usability/reliability. No network downtime occurred in the process of the upgrade. 
 
+
+## Education
+
+High School graduate 2002 
