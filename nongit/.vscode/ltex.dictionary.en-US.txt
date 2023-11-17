@@ -1,4 +1,0 @@
-IaC
-Devops
-Rackrental
-Wyble
